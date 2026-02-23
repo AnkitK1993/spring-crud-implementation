@@ -1,0 +1,22 @@
+server:
+  port: 9090
+  servlet:
+    context-path: /spring-crud-implementation
+spring:
+  application:
+    name: spring-crud-implementation
+
+  # Configuration for MySQL Database
+
+  jpa:
+    properties:
+      hibernate:
+        format_sql: true
+        ddl-auto: update
+    show-sql: true
+
+  datasource:
+    url: jdbc:mysql://localhost:3306/ankitpractice
+    username: root
+    password: Synedd@1993
+    driver-class-name: com.mysql.cj.jdbc.Driver
