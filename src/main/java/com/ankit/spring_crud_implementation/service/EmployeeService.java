@@ -15,8 +15,13 @@ public class EmployeeService implements EmployeeImpl {
     private EmployeeRepository employeeRepository;
 
     @Override
-    public List<Employee> createEmployees(List<Employee> employees) {
+    public List<Employee> createEmployeeList(List<Employee> employees) {
         return employeeRepository.saveAll(employees);
+    }
+
+    @Override
+    public Employee createEmployee(Employee employee) {
+        return employeeRepository.save(employee);
     }
 
     @Override
@@ -44,6 +49,11 @@ public class EmployeeService implements EmployeeImpl {
     @Override
     public List<Employee> getAllEmployees() {
         return employeeRepository.findAll();
+    }
+
+    @Override
+    public Employee getEmployeeById(Long id) {
+        return employeeRepository.findById(id).get();
     }
 
     @Override

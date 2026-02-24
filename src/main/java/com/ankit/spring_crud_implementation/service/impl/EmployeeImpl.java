@@ -6,13 +6,17 @@ import java.util.List;
 
 public interface EmployeeImpl {
 
-    List<Employee> createEmployees(List<Employee> employee);
+    List<Employee> createEmployeeList(List<Employee> employee);
+
+    Employee createEmployee(Employee employee);
 
     Employee updateEmployee(Employee employee, Long id);
 
     String deleteEmployee(Long id);
 
     List<Employee> getAllEmployees();
+
+    Employee getEmployeeById(Long id);
 
     String deleteAllEmployees();
 }
