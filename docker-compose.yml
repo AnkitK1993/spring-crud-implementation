@@ -1,0 +1,23 @@
+version: '3.8'
+
+services:
+  app:
+    image: ankit26031993/dockerdemo:0.0.2
+    ports:
+      - 8080:8080
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:mysql://db:3306/ankitpractice
+      SPRING_DATASOURCE_USERNAME: ankit
+      SPRING_DATASOURCE_PASSWORD: ankit@1234
+    depends_on:
+      - db
+
+  db:
+    image: mysql:8.0.33
+    environment:
+      DATABASE_HOST: docker-mysql
+      DATABASE_PORT: 3306
+      MYSQL_ROOT_PASSWORD: ankit@1234
+      MYSQL_DATABASE: ankitpractice
+      MYSQL_USER: ankit
+      MYSQL_PASSWORD: ankit@1234
