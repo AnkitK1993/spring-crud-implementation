@@ -1,5 +1,5 @@
 server:
-  port: 9090
+  port: 8080
   servlet:
     context-path: /spring-crud-implementation
 spring:
@@ -9,14 +9,17 @@ spring:
   # Configuration for MySQL Database
 
   jpa:
+#    database-platform: org.hibernate.dialect.MySQL5Dialect
+    show-sql: true
     properties:
       hibernate:
         format_sql: true
         ddl-auto: update
-    show-sql: true
+        dialect: org.hibernate.dialect.MySQLDialect
 
   datasource:
     url: jdbc:mysql://localhost:3306/ankitpractice
-    username: root
-    password: Synedd@1993
+    username: ankit
+    password: ankit@1234
     driver-class-name: com.mysql.cj.jdbc.Driver
+    initialization-mode: always

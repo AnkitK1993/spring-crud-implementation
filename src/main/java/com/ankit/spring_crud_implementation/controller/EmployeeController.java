@@ -17,6 +17,11 @@ public class EmployeeController {
     @Autowired
     private EmployeeService employeeService;
 
+    @GetMapping("/hi")
+    public String hello() {
+        return "Hello World";
+    }
+
     @GetMapping
     public List<Employee> getAllEmployees() {
         return employeeService.getAllEmployees();
